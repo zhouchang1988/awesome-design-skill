@@ -4,6 +4,8 @@ UI 设计风格选择器，为 Claude Code 提供智能的设计系统选择能�
 
 ## 简介
 
+> 💡 **灵感来源**: 本项目受 [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) 启发而创建，感谢他们的开源贡献。
+
 Awesome Design Skill 是一个 Claude Code 技能插件，帮助开发者快速选择适合项目的设计风格。包含 **54+ 知名品牌设计规范**，覆盖 AI 产品、开发者工具、金融科技、协作平台等多种场景。
 
 ## 特性
@@ -202,6 +204,10 @@ git clone https://github.com/zhouchang1988/awesome-design-skill.git
 ## 贡献
 
 欢迎贡献新的设计风格或改进现有规范。
+
+## 致谢
+
+本项目灵感来自 [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md)，感谢他们为社区提供的优秀设计资源。
 
 ## 许可证
 
