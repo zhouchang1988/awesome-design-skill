@@ -1,19 +1,19 @@
 # Awesome Design Skill
 
-UI 设计风格选择器，为 Claude Code 提供智能的设计系统选择能力。
+UI 设计风格选择器，为 Claude Code 提供设计系统选择能力。
 
 ## 简介
 
 > 💡 **灵感来源**: 本项目受 [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) 启发而创建，感谢他们的开源贡献。
 
-Awesome Design Skill 是一个 Claude Code 技能插件，帮助开发者快速选择适合项目的设计风格。包含 **54+ 知名品牌设计规范**，覆盖 AI 产品、开发者工具、金融科技、协作平台等多种场景。
+Awesome Design Skill 是一个 Claude Code 技能插件，帮助开发者使用指定的设计风格进行 UI 开发。包含 **54+ 知名品牌设计规范**，覆盖 AI 产品、开发者工具、金融科技、协作平台等多种场景。
 
 ## 特性
 
 - **54+ 精选设计风格** - 涵盖 Linear、Apple、Stripe、Vercel、Notion 等知名品牌
-- **智能匹配** - 根据项目需求自动推荐合适的设计风格
 - **完整设计规范** - 每个风格包含颜色、字体、间距、组件等完整设计系统
 - **一键应用** - 快速复制 DESIGN.md 到项目目录
+- **可自定义** - 轻松添加或替换设计风格
 
 ## 安装
 
@@ -28,19 +28,73 @@ git clone https://github.com/zhouchang1988/awesome-design-skill.git
 
 ### 在 Claude Code 中使用
 
-直接向 Claude 描述你的设计需求：
-
-```
-设计一个项目管理 dashboard
-```
+**此技能仅在用户明确指定设计风格时触发。** 例如：
 
 ```
 用 Linear 风格设计一个登录页面
 ```
 
 ```
-制作一个音乐播放器界面
+使用 Stripe 风格创建支付界面
 ```
+
+```
+按 Apple 风格重构这个页面
+```
+
+**以下请求不会触发此技能**（未指定风格）：
+
+```
+设计一个项目管理 dashboard        # 未指定风格，不触发
+制作一个音乐播放器界面            # 未指定风格，不触发
+创建一个登录页面                  # 未指定风格，不触发
+```
+
+### 查看可用风格
+
+```
+列出所有设计风格
+有哪些风格可用
+```
+
+### 查看特定风格详情
+
+```
+看看 Linear 风格的设计规范
+查看 Vercel 风格
+```
+
+## 自定义设计风格
+
+**design-md 目录中的内容可以自由添加或替换。** 你可以：
+
+- 添加自己喜欢的设计风格（在 `design-md/` 目录下创建新的风格文件夹和 DESIGN.md）
+- 替换现有风格的 DESIGN.md 内容
+- 删除不需要的风格
+
+这样你可以构建属于自己的设计风格库，让 Claude 使用你熟悉和偏好的设计系统。
+
+### 添加新风格示例
+
+```bash
+# 创建新风格目录
+mkdir -p design-md/my-brand
+
+# 创建 DESIGN.md 文件
+cat > design-md/my-brand/DESIGN.md << 'EOF'
+# My Brand Design System
+
+## Overview
+我的自定义设计风格描述...
+
+## Colors
+- Primary: #3B82F6
+- Background: #FFFFFF
+...
+EOF
+```
+
+## 命令行使用
 
 ### 查看可用风格
 
@@ -48,23 +102,23 @@ git clone https://github.com/zhouchang1988/awesome-design-skill.git
 ./scripts/list-styles.sh
 ```
 
+### 获取指定风格
+
+```bash
+./scripts/get-design.sh linear.app
+./scripts/copy-design.sh linear.app
+```
+
 ### 智能选择风格
 
 ```bash
-./scripts/smart-select.sh "设计一个项目管理dashboard"
+./scripts/smart-select.sh "项目管理"
 ```
 
 ### 随机选择风格
 
 ```bash
 ./scripts/random-style.sh
-```
-
-### 获取指定风格
-
-```bash
-./scripts/get-design.sh linear.app
-./scripts/copy-design.sh linear.app
 ```
 
 ## 支持的设计风格
@@ -184,22 +238,6 @@ git clone https://github.com/zhouchang1988/awesome-design-skill.git
 | `random-style.sh` | 随机选择一个设计风格 |
 | `get-design.sh` | 获取指定风格的 DESIGN.md 路径 |
 | `copy-design.sh` | 复制 DESIGN.md 到指定目录 |
-
-## 智能匹配规则
-
-根据项目类型自动推荐风格：
-
-| 项目类型 | 推荐风格 |
-|---------|---------|
-| Landing Page | Linear |
-| Dashboard | Linear |
-| 文档站 | Mintlify |
-| 博客 | Apple |
-| 电商 | Airbnb |
-| 作品集 | Framer |
-| SaaS 产品 | Linear |
-| 移动应用 | Apple |
-| 企业产品 | Stripe |
 
 ## 贡献
 
