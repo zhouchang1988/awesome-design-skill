@@ -9,6 +9,10 @@ description: UI设计风格选择器，从design-md风格库中选择合适的�
 
 **重要：此技能仅在用户明确指定设计风格时触发。如果用户未指定风格，不要使用此技能。**
 
+## 字体说明
+
+所有设计风格的预览文件（preview.html、preview-dark.html）使用 **fonts.loli.net** 作为 Google Fonts 的镜像源，以优化中国大陆地区的访问体验。如需更换为其他字体源，可批量替换文件中的 `fonts.loli.net` 为其他镜像地址。
+
 ## 自定义设计风格
 
 **design-md 目录中的内容可以自由添加或替换。** 你可以：
